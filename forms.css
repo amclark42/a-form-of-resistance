@@ -1,0 +1,24 @@
+/* 
+ * Simple CSS for "A Form of Resistance"
+ */
+
+body {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 1.35rem;
+  margin: 1rem 2rem;
+}
+
+main { margin: 1rem 2rem; }
+
+form, .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  gap: 1rem;
+}
+
+input { font-size: inherit; }
+
+.hidden { display: none; }

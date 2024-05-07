@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>A Simple Form</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/utils/gfx/favicon.ico" />
+    <!--  CSS  -->
+    <link rel="stylesheet" type="text/css" 
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600&amp;subset=latin,latin-ext" />
+    <link rel="stylesheet" type="text/css" href="forms.css" />
+    <!--  Javascript  -->
+    <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>A Simple Form</h1>
+      <form>
+        <div class="form-group">
+          <label for="input-name">First name</label>
+          <input id="input-name" name="fname" type="text" required="required" />
+        </div>
+        <div>
+          <input type="hidden" name="am-i-cool" value="no" />
+        </div>
+        <input type="submit" />
+      </form>
+    </main>
+  </body>
+</html>
