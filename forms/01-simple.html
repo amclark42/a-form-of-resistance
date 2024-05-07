@@ -9,14 +9,13 @@
     <!--  CSS  -->
     <link rel="stylesheet" type="text/css" 
       href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600&amp;subset=latin,latin-ext" />
-    <link rel="stylesheet" type="text/css" href="forms.css" />
-    <!--  Javascript  -->
-    <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/forms.css" />
   </head>
   <body>
     <main>
       <h1>A Simple Form</h1>
-      <form>
+      <form method="get" action="http://localhost:8080/a-form-of-resistance/request">
         <div class="form-group">
           <label for="input-name">First name</label>
           <input id="input-name" name="fname" type="text" required="required" />

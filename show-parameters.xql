@@ -33,7 +33,7 @@ xquery version "3.1";
   declare
     %rest:GET
     %rest:POST
-    %rest:path('say-what')
+    %rest:path('a-form-of-resistance/request')
     %output:method('html')
     %output:media-type('text/html')
   function tut:show-parameters() {
@@ -52,8 +52,8 @@ xquery version "3.1";
       <html lang="en">
         <head>
           <title>Form request response</title>
-          <style>{ unparsed-text('bootstrap-reboot.min.css') }</style>
-          <style>{ unparsed-text('forms.css') }</style>
+          <style>{ unparsed-text('css/bootstrap-reboot.min.css') }</style>
+          <style>{ unparsed-text('css/forms.css') }</style>
           <style><![CDATA[
             #req-params {
               display: grid;
