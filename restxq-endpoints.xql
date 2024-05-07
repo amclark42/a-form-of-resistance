@@ -30,6 +30,25 @@ xquery version "3.1";
     FUNCTIONS
  :)
   
+  (:~
+    Serve out an example form with the given filename. An error is returned if the file doesn't exist.
+   :)
+  declare
+    %rest:GET
+    %rest:path('a-form-of-resistance/forms/{$filename}')
+    %output:method('html')
+    %output:media-type('text/html')
+  function tut:display-form($filename as xs:string) {
+    if ( not(doc-available('forms/'||$filename)) ) then
+      <p>ERROR</p>
+    else doc('forms/'||$filename)
+  };
+  
+  
+  (:~
+    This endpoint takes in any GET or POST request, and simply repeats back parts of the HTTP request.
+    Useful for demonstrating what data is sent by the example forms.
+   :)
   declare
     %rest:GET
     %rest:POST
