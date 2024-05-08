@@ -3,7 +3,7 @@ xquery version "3.1";
   module namespace tut="http://amclark42.net/ns/tutorials";
 (:  LIBRARIES  :)
 (:  NAMESPACES  :)
-  (:declare default element namespace "http://www.wwp.northeastern.edu/ns/textbase";:)
+  declare default element namespace "http://www.w3.org/1999/xhtml";
   declare namespace array="http://www.w3.org/2005/xpath-functions/array";
   declare namespace http="http://expath.org/ns/http-client";
   declare namespace map="http://www.w3.org/2005/xpath-functions/map";
@@ -31,12 +31,24 @@ xquery version "3.1";
  :)
   
   (:~
+    
+   :)
+  declare
+    %rest:GET
+    %rest:path('a-form-of-resistance')
+    %output:method('xhtml')
+    %output:media-type('text/html')
+  function tut:main-page() {
+    tut:build-page('Page not found', <p>Page not found</p>)
+  };
+  
+  (:~
     Serve out an example form with the given filename. An error is returned if the file doesn't exist.
    :)
   declare
     %rest:GET
     %rest:path('a-form-of-resistance/forms/{$filename}')
-    %output:method('html')
+    %output:method('xhtml')
     %output:media-type('text/html')
   function tut:display-form($filename as xs:string) {
     if ( not(doc-available('forms/'||$filename)) ) then
@@ -55,7 +67,7 @@ xquery version "3.1";
     %rest:GET
     %rest:POST
     %rest:path('a-form-of-resistance/request')
-    %output:method('html')
+    %output:method('xhtml')
     %output:media-type('text/html')
   function tut:show-parameters() {
     let $method := request:method()
@@ -89,7 +101,7 @@ xquery version "3.1";
  :)
   
   declare %private function tut:build-page($title as xs:string, $contents as node()*) as node() {
-    <html lang="en">
+    <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
       <head>
         <title>{ $title }</title>
         <style>{ unparsed-text('css/bootstrap-reboot.min.css') }</style>
