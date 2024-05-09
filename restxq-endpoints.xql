@@ -41,8 +41,10 @@ xquery version "3.1";
             text { ": " },
             <span class="form-summary">{ doc($path)//xhtml:details/xhtml:p[1]/node() }</span>
           )
-        return
-          insert node $summary after $formItem/xhtml:a
+        return (
+            replace value of node $formItem/xhtml:a/@href with concat('a-form-of-resistance/',$path),
+            insert node $summary after $formItem/xhtml:a
+          )
       return $modIndex
     return tut:build-page("A Form of Resistance", $index)
   };
