@@ -31,7 +31,7 @@ xquery version "3.1";
  :)
   
   (:~
-    
+    The landing page for the site.
    :)
   declare
     %rest:GET
@@ -39,7 +39,21 @@ xquery version "3.1";
     %output:method('xhtml')
     %output:media-type('text/html')
   function tut:main-page() {
-    tut:build-page('Page not found', <p>Page not found</p>)
+    (: Use index.html, but also include the first paragraph from the "About this form" section of each 
+      form. :)
+    let $index := 
+      copy $modIndex := doc('index.html')//xhtml:body/*
+      modify 
+        for $formItem in $modIndex//xhtml:li[xhtml:a[@class eq 'form-link']]
+        let $path := $formItem/xhtml:a/@href/data(.)
+        let $summary := (
+            text { ": " },
+            <span class="form-summary">{ doc($path)//xhtml:details/xhtml:p[1]/node() }</span>
+          )
+        return
+          insert node $summary after $formItem/xhtml:a
+      return $modIndex
+    return tut:build-page("A Form of Resistance", $index)
   };
   
   (:~
@@ -133,18 +147,6 @@ xquery version "3.1";
         <title>{ $title }</title>
         <style>{ unparsed-text('css/bootstrap-reboot.min.css') }</style>
         <style>{ unparsed-text('css/forms.css') }</style>
-        <style><![CDATA[
-          #req-params {
-            display: grid;
-            grid-template-columns: 30% auto;
-          }
-          #req-params > dt { grid-column: 1; }
-          #req-params > dd { grid-column: 2; }
-          table { width: 100%; }
-          table, td, th { border: thin solid gray; }
-          th, td { padding: 0.25em; }
-          th[scope="column"] { text-align: center; }
-        ]]></style>
       </head>
       <body>
         { $contents }

@@ -14,6 +14,10 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  margin: 1.5em 0 0.5em;
+}
+
 details.about {
   border: thin solid black;
   border-radius: 0.5em;
@@ -46,6 +50,7 @@ main {
     max-width: 1200px;
   }
   h1 { grid-area: header; margin: 1em 0; }
+  div.home { grid-area: 2 / form / 2 / aside; }
   form { grid-area: form; }
   aside { grid-area: aside; }
   details.about { margin-top: 0; }
@@ -86,6 +91,22 @@ input[type="submit"] {
   font-size: 0.85em;
   margin-top: 0.5em;
 }
+
+#req-params {
+  display: grid;
+  grid-template-columns: 30% auto;
+}
+#req-params > dt { grid-column: 1; }
+#req-params > dd { grid-column: 2; }
+
+table { width: 100%; }
+
+table, td, th { border: thin solid gray; }
+
+th, td { padding: 0.25em; }
+
+th[scope="column"] { text-align: center; }
+
 p.note { margin-bottom: 0; }
 
 .hidden { display: none; }
