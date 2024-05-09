@@ -55,7 +55,7 @@ xquery version "3.1";
       tut:build-page('Page not found', <p>Page not found</p>)
     else
       let $formDoc := doc('forms/'||$filename)
-      return tut:build-page($formDoc//xhtml:title, $formDoc//xhtml:main)
+      return tut:build-page($formDoc//xhtml:title, $formDoc//xhtml:body/*)
   };
   
   
@@ -71,30 +71,47 @@ xquery version "3.1";
     %output:media-type('text/html')
   function tut:show-parameters() {
     let $method := request:method()
+    let $allParamKeys := request:parameter-names()
     let $params :=
       <dl id="req-params">{
-        for $key in request:parameter-names()
+        for $key in $allParamKeys
         let $valSeq := request:parameter($key, '')
         return (
             <dt>{ $key }</dt>,
             for $value in $valSeq
-            return <dd>{ xs:string($value) }</dd>
+            return
+              <dd><code>{ xs:string($value) }</code></dd>
           )
       }</dl>
+    let $navbar :=
+      <nav>
+        <a href="./">A Form of Resistance</a>
+        {
+          let $prevForm := request:parameter('form-name', 'NOPE')
+          return
+            if ( $allParamKeys = 'form-name' and doc-available('forms/'||$prevForm) ) then
+              <a href="forms/{$prevForm}">Back to form</a>
+            else ()
+        }
+      </nav>
     return tut:build-page('Form request response', (
-        <h1>What’d you just say?:
-          <br/><small>What your recent form request says about <em>you</em></small>
-        </h1>,
         <main>
-          <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods" target="_blank">HTTP 
-            request method</a>:
+          <h1>What’d you just say?:
+            <br/><small>What your recent form request says about <em>you</em></small>
+          </h1>
+          <p>HTTP 
+            <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods" target="_blank">request 
+              method</a>:
             <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/{$method}" 
               target="_blank">{ $method }</a>
           </p>
           { $params }
+          <aside>{ $navbar }</aside>
         </main>
       ))
   };
+
+
 
 (:
     SUPPORT FUNCTIONS
@@ -109,7 +126,7 @@ xquery version "3.1";
         <style><![CDATA[
           #req-params {
             display: grid;
-            grid-template-columns: 10% auto;
+            grid-template-columns: 30% auto;
           }
           #req-params > dt { grid-column: 1; }
           #req-params > dd { grid-column: 2; }

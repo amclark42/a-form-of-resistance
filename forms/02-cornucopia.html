@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>The Cornucopia</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/utils/gfx/favicon.ico" />
+    <!--  CSS  -->
+    <link rel="stylesheet" type="text/css" 
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600&amp;subset=latin,latin-ext" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/forms.css" />
+  </head>
+  <body>
+    <main>
+      <h1>The Cornucopia</h1>
+      <form action="../request">
+        <div class="form-group">
+          <label for="input-text">Single-line text field</label>
+          <input type="text" id="input-text" name="single-text" />
+        </div>
+        <hr />
+        <div>
+          <input type="checkbox" id="input-check" name="true" />
+          <label for="input-check">Check box</label>
+        </div>
+        <hr />
+        <fieldset>
+          <legend>Radio buttons</legend>
+          <input type="radio" id="input-radio-yes" name="radio" value="yes" />
+          <label for="input-radio-yes">Yes</label>
+          <input type="radio" id="input-radio-no" name="radio" value="no" />
+          <label for="input-radio-no">No</label>
+        </fieldset>
+        <hr />
+        <div class="form-group">
+          <label for="input-email">Email field</label>
+          <input type="email" id="input-email" name="email" placeholder="j.doe@example.com" />
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="input-tel">Telephone number</label>
+          <input type="tel" id="input-tel" name="telephone" placeholder="XXX-XXX-XXXX" />
+          <p class="note">Since telephone numbers are formatted differently across the world, anything 
+            you enter <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel" 
+            class="external" target="_blank">won’t be validated automatically</a>. However, in a mobile 
+            device’s browser, a telephone keypad may be displayed.</p>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="input-pass">Password</label>
+          <input type="password" id="input-pass" name="password" />
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="input-file">File upload <small>(<em>please</em> do not upload a file)</small></label>
+          <input type="file" id="input-file" name="file" disabled="disabled" />
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="input-url">URL</label>
+          <input type="url" id="input-url" name="link" placeholder="http://example.com" />
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="input-number">Number field</label>
+          <input type="number" id="input-number" name="num" value="42" min="0" max="100" />
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="input-range">Range slider</label>
+          <input type="range" id="input-range" name="range" min="0" max="1000" step="10" value="900" />
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="input-search">Search field</label>
+          <input type="search" id="input-search" name="search-query"/>
+          <p class="note">The <a 
+            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/search" 
+            class="external" target="_blank">search field</a> is basically a single-line text field, but 
+            because it has a special type, it can be handled differently than regular text fields.</p>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="input-date">Date field</label>
+          <input type="date" id="input-date" name="date" />
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="input-time">Time field (local, no timezone)</label>
+          <input type="time" id="input-time" name="time" />
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="input-dt-loc">Date and time field (local, no timezone)</label>
+          <input type="datetime-local" id="input-dt-loc" name="datetime" />
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="input-month">Month and year field</label>
+          <input type="month" id="input-month" name="month" />
+          <p class="note">The <a 
+            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/month" target="_blank"
+            >“month” input type</a> isn’t implemented in all browsers. As of this writing, Chrome and 
+            Edge have working controls and validation for this field; Firefox and Safari do not. 
+            However, if the browser ever doesn’t know what to do with an input element, it renders as a 
+            regular text field.</p>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="input-week">Week in a year field</label>
+          <input type="week" id="input-week" name="week-year" />
+          <p class="note">The <a 
+            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/week" target="_blank"
+            >“week” input type</a> isn’t implemented in all browsers. As of this writing, Chrome and 
+            Edge have working controls and validation for this field; Firefox and Safari do not. 
+            However, if the browser ever doesn’t know what to do with an input element, it renders as a 
+            regular text field.</p>
+        </div>
+        <hr />
+        <div>
+          <input type="color" id="input-color" name="color" />
+          <label for="input-color">Color picker</label>
+        </div>
+        <hr />
+        <div>
+          <label>Hidden field</label>
+          <input type="hidden" name="form-name" value="02-cornucopia.html" />
+        </div>
+        <hr />
+        <input type="button" value="Button" />
+        <hr />
+        <input type="reset" value="Reset button" />
+        <hr />
+        <!-- The "image" input is used to create a submit button out of an image you provide.
+        <div class="form-group">
+          <input type="image" />
+        </div>-->
+        <input type="submit" value="Submit button" />
+      </form>
+      <aside>
+        <details class="about">
+          <summary>About this form</summary>
+          <p>This form has one of almost every type of input element.</p>
+        </details>
+        <nav>
+          <a href="../">A Form of Resistance</a>
+        </nav>
+      </aside>
+    </main>
+  </body>
+</html>
