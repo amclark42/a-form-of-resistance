@@ -1,28 +1,19 @@
 xquery version "3.1";
 
   module namespace tut="http://amclark42.net/ns/tutorials";
-(:  LIBRARIES  :)
 (:  NAMESPACES  :)
   declare default element namespace "http://www.w3.org/1999/xhtml";
-  declare namespace array="http://www.w3.org/2005/xpath-functions/array";
-  declare namespace http="http://expath.org/ns/http-client";
-  declare namespace map="http://www.w3.org/2005/xpath-functions/map";
   declare namespace output="http://www.w3.org/2010/xslt-xquery-serialization";
   declare namespace request="http://exquery.org/ns/request";
   declare namespace rest="http://exquery.org/ns/restxq";
-  declare namespace tei="http://www.tei-c.org/ns/1.0";
-  declare namespace wwp="http://www.wwp.northeastern.edu/ns/textbase";
   declare namespace xhtml="http://www.w3.org/1999/xhtml";
 
 (:~
-  
+  This XQuery script defines how the BaseX XML database serves out the website for "A Form of 
+  Resistance". Mostly the XHTML files are used as-is, with small tweaks here and there.
   
   @author Ash Clark
   @since 2024
- :)
- 
-(:
-    VARIABLES
  :)
   
 
