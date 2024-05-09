@@ -12,46 +12,6 @@ What can we do? Well, sometimes we have options beyond the ones the form gives u
 
 You only need to know [what HTML markup looks like](https://gist.github.com/amclark42/ace2c44b1c987d91fb5a79eefad34662). No coding experience is necessary, only an openness to discussing ethical web-citizenry, data collection, and/or web design.
 
-## Outline
-
-I'll have 45 minutes.
-
-1. Background — why this matters
-2. Demonstration of browser tools
-  1. What they show
-  2. How to navigate with them
-3. Try it on any webpage
-4. Questions
-5. Put link to website in chat
-6. Demonstration of browser tools — modifying a simple form
-  1. Change a few attributes
-  2. Delete a form component
-7. Try it + Questions
-8. Under the hood + caveats
-  1. Where does your data go?
-  2. "Backend" architecture
-    1. Form acceptance criteria
-    2. Databases
-  3. To what purpose are they collecting this data? Why might they need it?
-  4. "Frontend" architecture
-    1. HTML custom elements
-    2. Javascript monitoring form components and submission
-9. Questions/discussion/experimenting with other custom forms
-
-## On implementation
-
-I'll need:
-
-- Links to reference materials
-  - Browser developer tools documentation
-    - Firefox, Chrome, Safari, (Edge?)
-  - HTML elements
-  - In-depth web architecture, tech explanations
-- Slides with bullet points or graphics to explain concepts
-- Boutique forms for practice/experimentation
-  - Simple form — ~~radio buttons,~~ text field, maybe hidden input
-  - 
-
 ## Script
 
 Hi everyone! For those who don't know me, I'm Ash Clark. My pronouns are e, em, eir, and I'm the XML Applications Developer for the Digital Scholarship Group and the Women Writers Project. A big part of my job is playing web developer: I make websites using collections of digital humanities data.
@@ -72,12 +32,7 @@ Let me show you how this works in Firefox. There are a couple of ways to get at 
 
 It's worth noting that while most modern browsers have these tools, the names of these tools, and how you get to them or use them, may be different.
 
-- [Firefox](https://firefox-source-docs.mozilla.org/devtools-user/)
-- [Google Chrome](https://developer.chrome.com/docs/devtools/) (and other Chromium-based browsers, e.g. Brave)
-- [Microsoft Edge](https://learn.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/overview)
-- [Safari](https://developer.apple.com/documentation/safari-developer-tools)
-
-Now, I'd like everyone to take 5 to 8 minutes to visit a web page with a form. Try using your browser's developer tools to examine what the form looks like under the hood. Click around, try moving your mouse around the interface and see what happens. (If you're using Safari, you're going to need to turn on the developer tools first.) In the meantime, I'll drink some water and catch up on chat.
+Now, I'd like everyone to take 3 to 5 minutes to visit a web page with a form. Try using your browser's developer tools to examine what the form looks like under the hood. Click around, try moving your mouse around the interface and see what happens. (If you're using Safari, you're going to need to turn on the developer tools first.) In the meantime, I'll drink some water and catch up on chat.
 
 <!-- above was 5 min -->
 
