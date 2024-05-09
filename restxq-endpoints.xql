@@ -73,16 +73,24 @@ xquery version "3.1";
     let $method := request:method()
     let $allParamKeys := request:parameter-names()
     let $params :=
-      <dl id="req-params">{
+      let $rows :=
         for $key in $allParamKeys
+        let $keyCell := <th scope="row">{ $key }</th>
         let $valSeq := request:parameter($key, '')
-        return (
-            <dt>{ $key }</dt>,
-            for $value in $valSeq
-            return
-              <dd><code>{ xs:string($value) }</code></dd>
-          )
-      }</dl>
+        return 
+          for $value in $valSeq
+          return
+            <tr>
+              { $keyCell }
+              <td><code>{ xs:string($value) }</code></td>
+            </tr>
+      return
+        <table>
+          <thead>
+            <tr><th scope="column">Parameter name</th> <th scope="column">Value</th></tr>
+          </thead>
+          <tbody>{ $rows }</tbody>
+        </table>
     let $navbar :=
       <nav>
         <a href="./">A Form of Resistance</a>
@@ -99,13 +107,15 @@ xquery version "3.1";
           <h1>What’d you just say?:
             <br/><small>What your recent form request says about <em>you</em></small>
           </h1>
-          <p>HTTP 
-            <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods" target="_blank">request 
-              method</a>:
-            <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/{$method}" 
-              target="_blank">{ $method }</a>
-          </p>
-          { $params }
+          <div>
+            <p>HTTP 
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods" target="_blank">request
+                method</a>:
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/{$method}" 
+                target="_blank">{ $method }</a>
+            </p>
+            { $params }
+          </div>
           <aside>{ $navbar }</aside>
         </main>
       ))
@@ -130,6 +140,10 @@ xquery version "3.1";
           }
           #req-params > dt { grid-column: 1; }
           #req-params > dd { grid-column: 2; }
+          table { width: 100%; }
+          table, td, th { border: thin solid gray; }
+          th, td { padding: 0.25em; }
+          th[scope="column"] { text-align: center; }
         ]]></style>
       </head>
       <body>
