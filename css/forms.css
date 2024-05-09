@@ -50,7 +50,7 @@ main {
     max-width: 1200px;
   }
   h1 { grid-area: header; margin: 1em 0; }
-  div.home { grid-area: 2 / form / 2 / aside; }
+  div.home { grid-area: form; }
   form { grid-area: form; }
   aside { grid-area: aside; }
   details.about { margin-top: 0; }
