@@ -74,6 +74,10 @@ form {
 
 input { font-size: inherit; }
 
+input[type="radio"] {
+  margin-left: 0.5em;
+}
+
 input[type="submit"] {
   background-color: white;
 }

@@ -14,7 +14,7 @@
   <body>
     <main>
       <h1>A Biased Form</h1>
-      <form method="get" action="../request">
+      <form method="post" action="../request">
         <div class="form-group">
           <label for="input-name">My name</label>
           <input id="input-name" name="my-name" type="text" maxlength="3" />
@@ -33,6 +33,13 @@
             <option selected="selected">Frisk</option>
             <option>Frisk</option>
             <option>Frisk</option>
+            <option>Frisk</option>
+            <option>Frisk</option>
+            <option>Frisk</option>
+            <option>Frisk</option>
+            <option>Frisk</option>
+            <option>Frisk</option>
+            <option>Frisk</option>
           </select>
         </div>
         <fieldset>
@@ -42,6 +49,10 @@
           <input type="radio" id="soup-love" name="i-like-soup" value="gosh I love soup"  required="required"/>
           <label for="soup-love">gosh I love soup</label>
         </fieldset>
+        <div class="form-group">
+          <label>Please share an anecdote about your use of XQuery</label>
+          <textarea id="textarea" name="anything"></textarea>
+        </div>
         <div>
           <input type="hidden" name="form-name" value="03-biased.html" />
         </div>
