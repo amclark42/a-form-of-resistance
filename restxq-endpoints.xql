@@ -36,13 +36,12 @@ xquery version "3.1";
       copy $modIndex := doc('index.html')//xhtml:body/*
       modify 
         for $formItem in $modIndex//xhtml:li[xhtml:a[@class eq 'form-link']]
-        let $path := $formItem/xhtml:a/@href/data(.)
+        (:let $path := $formItem/xhtml:a/@href/data(.):)
         let $summary := (
             text { ": " },
             <span class="form-summary">{ doc($path)//xhtml:details/xhtml:p[1]/node() }</span>
           )
         return (
-            replace value of node $formItem/xhtml:a/@href with concat('a-form-of-resistance/',$path),
             insert node $summary after $formItem/xhtml:a
           )
       return $modIndex
