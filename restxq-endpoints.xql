@@ -137,7 +137,7 @@ xquery version "3.1";
         </table>
     let $navbar :=
       <nav>
-        <a href="./">A Form of Resistance</a>
+        <a href="./index.html">A Form of Resistance</a>
         {
           let $prevForm := request:parameter('form-name', 'NOPE')
           return
