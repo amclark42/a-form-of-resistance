@@ -3,6 +3,7 @@ xquery version "3.1";
   module namespace tut="http://amclark42.net/ns/tutorials";
 (:  NAMESPACES  :)
   declare default element namespace "http://www.w3.org/1999/xhtml";
+  declare namespace http="http://expath.org/ns/http-client";
   declare namespace output="http://www.w3.org/2010/xslt-xquery-serialization";
   declare namespace request="http://exquery.org/ns/request";
   declare namespace rest="http://exquery.org/ns/restxq";
@@ -21,6 +22,23 @@ xquery version "3.1";
 (:
     FUNCTIONS
  :)
+  
+  
+  (:~
+    Return a "404 Not Found" response for paths otherwise unmatched inside `a-form-of-resistance`.
+   :)
+  declare
+    %rest:GET
+    %rest:path('a-form-of-resistance/{$path=.+}')
+    %output:method('xhtml')
+    %output:media-type('text/html')
+  function tut:not-found($path) {
+    <rest:response>
+      <http:response status="404"/>
+    </rest:response>,
+    tut:build-page('Resource not found', doc('404.html'))
+  };
+  
   
   (:~
     Redirect from /a-form-of-resistance to the homepage index. This makes it easier to construct 
@@ -78,7 +96,7 @@ xquery version "3.1";
     %output:media-type('text/html')
   function tut:display-form($filename as xs:string) {
     if ( not(doc-available('forms/'||$filename)) ) then
-      tut:build-page('Page not found', <p>Page not found</p>)
+      tut:build-page('Resource not found', doc('404.html'))
     else
       let $formDoc := doc('forms/'||$filename)
       return tut:build-page($formDoc//xhtml:title, $formDoc//xhtml:body/*)
