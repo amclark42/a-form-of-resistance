@@ -117,3 +117,5 @@ th[scope="column"] { text-align: center; }
 p.note { margin-bottom: 0; }
 
 .hidden { display: none; }
+
+li { margin: 0.5em 0; }
