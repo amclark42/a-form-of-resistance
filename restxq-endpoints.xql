@@ -6,6 +6,7 @@ xquery version "3.1";
   declare namespace output="http://www.w3.org/2010/xslt-xquery-serialization";
   declare namespace request="http://exquery.org/ns/request";
   declare namespace rest="http://exquery.org/ns/restxq";
+  declare namespace web="http://basex.org/modules/web";
   declare namespace xhtml="http://www.w3.org/1999/xhtml";
 
 (:~
@@ -15,18 +16,36 @@ xquery version "3.1";
   @author Ash Clark
   @since 2024
  :)
-  
+
 
 (:
     FUNCTIONS
  :)
   
   (:~
-    The landing page for the site.
+    Redirect from /a-form-of-resistance to the homepage index. This makes it easier to construct 
+    relative links to the index.
    :)
   declare
     %rest:GET
     %rest:path('a-form-of-resistance')
+    %output:method('xhtml')
+    %output:media-type('text/html')
+  function tut:main-page-redirect() {
+    let $reqPath := request:path()
+    let $usePath :=
+      if ( ends-with($reqPath, '/') ) then $reqPath
+      else concat($reqPath,'/')
+    return web:redirect(concat($usePath,'index.html'))
+  };
+  
+  
+  (:~
+    The landing page for the site.
+   :)
+  declare
+    %rest:GET
+    %rest:path('a-form-of-resistance/index.html')
     %output:method('xhtml')
     %output:media-type('text/html')
   function tut:main-page() {
@@ -47,6 +66,7 @@ xquery version "3.1";
       return $modIndex
     return tut:build-page("A Form of Resistance", $index)
   };
+  
   
   (:~
     Serve out an example form with the given filename. An error is returned if the file doesn't exist.
