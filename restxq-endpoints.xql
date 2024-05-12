@@ -50,7 +50,7 @@ xquery version "3.1";
     %output:method('xhtml')
     %output:media-type('text/html')
   function tut:main-page-redirect() {
-    let $reqPath := request:path()
+    let $reqPath := request:uri()
     let $usePath :=
       if ( ends-with($reqPath, '/') ) then $reqPath
       else concat($reqPath,'/')
