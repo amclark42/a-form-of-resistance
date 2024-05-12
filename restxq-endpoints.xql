@@ -36,7 +36,7 @@ xquery version "3.1";
       copy $modIndex := doc('index.html')//xhtml:body/*
       modify 
         for $formItem in $modIndex//xhtml:li[xhtml:a[@class eq 'form-link']]
-        (:let $path := $formItem/xhtml:a/@href/data(.):)
+        let $path := $formItem/xhtml:a/@href/data(.)
         let $summary := (
             text { ": " },
             <span class="form-summary">{ doc($path)//xhtml:details/xhtml:p[1]/node() }</span>
