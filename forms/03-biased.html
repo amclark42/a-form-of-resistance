@@ -43,7 +43,7 @@
           </select>
         </div>
         <fieldset>
-          <legend>Do you like soup?</legend>
+          <legend>Do you like soup? <span class="required-notice">Required</span></legend>
           <input type="radio" id="soup-like" name="i-like-soup" value="yes"  required="required"/>
           <label for="soup-like">yes</label>
           <input type="radio" id="soup-love" name="i-like-soup" value="gosh I love soup"  required="required"/>
@@ -54,6 +54,7 @@
           <textarea id="textarea" name="anything"></textarea>
         </div>
         <div>
+          <!-- The value of this input is used to construct a link from the submission page back to the form. -->
           <input type="hidden" name="form-name" value="03-biased.html" />
         </div>
         <input type="submit" />

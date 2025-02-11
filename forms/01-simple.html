@@ -16,11 +16,12 @@
       <h1>A Simple Form</h1>
       <form method="get" action="../request">
         <div class="form-group">
-          <label for="input-name">First name</label>
+          <label for="input-name">First name <span class="required-notice">(required)</span></label>
           <input type="text" id="input-name" name="fname" required="required" />
         </div>
         <div>
           <input type="hidden" name="am-i-cool" value="no" />
+          <!-- The value of the input below is used to construct a link from the submission page back to the form. -->
           <input type="hidden" name="form-name" value="01-simple.html" />
         </div>
         <input type="submit" />
