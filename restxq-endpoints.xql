@@ -177,8 +177,11 @@ xquery version "3.1";
         <style>{ unparsed-text('css/forms.css') }</style>
         { $contents//xhtml:head/xhtml:style }
       </head>
-      <body>
-        { $contents//xhtml:body/* }
+      <body>{
+          if ( $contents[self::xhtml:html] ) then
+            $contents//xhtml:body/*
+          else $contents
+        }
       </body>
     </html>
   };
