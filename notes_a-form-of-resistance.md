@@ -12,9 +12,9 @@ Let's dive in. Forms are interesting bits of websites to me, because they're so 
 
 An example: I usually fly with Southwest Airlines. Generally I have a pretty good opinion of them (at least compared to other airlines), but every time I've booked a flight home in the last few years, there's been one part of the traveler registration form that always stops me. They ask for the intended traveler's sex. Specifically, they're looking for the gender marker that matches the one on my photo ID. The form input only gives me two options, "M" for "male", and "F" for "female". However, I'm non-binary. My photo ID is my Massachusetts driver's license, which *actually* lists me as "X", or undeclared. Southwest's form requires me to misgender myself every time. And it *really* bothers me that it doesn't even follow its own reported goal of matching the identification I'll be presenting at the ticket counter.
 
-When you have this disconnect with forms, there's often no easy recourse. You have a choice: walk away from the site, search out an email address or call center to try to contact a real human... or, hold your nose and use the form anyway. Sometimes, that's all you can do. I continue to fly home to Chicago on a Southwest flight every year for Christmas, because seeing my family is more important to me that picking a fight with a major airline.
+When you have this disconnect with forms, there's often no easy recourse. You have a choice: walk away from the site, search out an email address or call center to try to contact a real human... or, hold your nose and use the form anyway. Sometimes, that's all you can do. Seeing my family is more important to me that picking a fight with a major airline, so for years I reserved my flight online anyway. And in fact, in preparing for this workshop, I discovered that Southwest has *finally* added "X" and "U" as gender indicators. Next winter break, I’ll be able to fly without having to go through customer service.
 
-But, because of the work I do, I know that there *is* sometimes another option. That said, you don't need to do the work I do in order to exercise this option. You don't need to have programming experience to do anything that I'm going to show you today. All you need is a browser, and a net connection, and a willingness to experiment a little.
+But because of the work I do, I know that there *is* sometimes another option. That said, you don't need to do the work I do in order to exercise this option. You don't need to have programming experience to do anything that I'm going to show you today. All you need is a browser, and a net connection, and a willingness to experiment a little.
 
 The secret is the "web development tools" that come bundled with pretty much every modern browser. These are windows that let people peek beneath the hood of any web page. These tools let you see how the browser is interpreting the HTML source code, and how it applies styling rules. In my work life, these tools let me debug my code, and quickly test out new styles. But these tools can be used by anyone, not just developers!
 
@@ -22,11 +22,11 @@ Let me show you how this works in Firefox. There are a couple of ways to get at 
 
 It's worth noting that, while most modern browsers have these tools, the names of these tools, and how you get to them or use them, may be different.
 
-Now, I'd like everyone to take 3 to 5 minutes to visit a web page with a form. Try using your browser's developer tools to examine what the form looks like under the hood. Click around, try moving your mouse around the interface and see what happens. (If you're using Safari, you're going to need to turn on the developer tools first.) In the meantime, I'll drink some water and catch up on chat.
+Now, I'd like everyone to take about 3 minutes to visit a web page with a form. Try using your browser's developer tools to examine what the form looks like under the hood. Click around, try moving your mouse around the interface and see what happens. (If you're using Safari, you're going to need to turn on the developer tools first.) In the meantime, I'll drink some water and catch up on chat.
 
-**After 5 minutes:** It's been 5 minutes, how is everyone doing? Does anyone have any questions or comments about what they're seeing?
+**After 3 minutes:** It's been 3 minutes, how is everyone doing? Does anyone have any questions or comments about what they're seeing?
 
-**After questions or 8 minutes:** Okay y'all, let's gather back in the Zoom call. I want to show you two techniques in this Inspector tool. The Inspector doesn't just *show* you how the browser interprets the HTML, it lets you *change* the page in your browser. When you're navigating through this HTML tree, you can right-click or <kbd>Ctrl</kbd>-click on any element and edit it. You can also double-click to change certain values.
+**After questions or 5 minutes:** Okay y'all, let's gather back in the Zoom call. I want to show you two techniques in this Inspector tool. The Inspector doesn't just *show* you how the browser interprets the HTML, it lets you *change* the page in your browser. When you're navigating through this HTML tree, you can right-click or <kbd>Ctrl</kbd>-click on any element and edit it. You can also double-click to change certain values.
 
 Here is a web form that I created. Let's Inspect the text box where I'm supposed to fill in my name. I do that by putting my cursor over the text field, right-clicking, and choosing the "Inspect" option at the bottom. Now we can see that the text box corresponds to an HTML "input" element. The "input" element has an *ID* of "input-name", and a *name* of "fname". It's the "text" *type* of input, and it's required.
 
@@ -52,7 +52,7 @@ Okay, have fun! I'll call us back in 5 to 8 minutes. Feel free to leave a messag
 
 **After 5 minutes:** We're at five minutes. While folks are wrapping up with their experiments, does anyone have any questions?
 
-**After questions or 8 minutes:** Okay, come on back to the Zoom call, everyone. There's one more thing I want to talk about. By now you might be wondering, when do you use these techniques? When do you *not* use them?
+**After questions or 8 minutes:** Okay, come on back to Teams, everyone. There's one more thing I want to talk about. By now you might be wondering, when do you use these techniques? When do you *not* use them?
 
 I wrestled with that question a lot when I was writing this workshop, because I've mostly been going on vibes and my own conscience. While there are many forms that have annoyed or disgusted me, like Southwest's, I've only ever modified three forms in the wild, at least so far.
 
@@ -62,6 +62,8 @@ When I hack a form, I am saying *no*, I cannot sit with this. *No,* you should k
 
 So, if the consequences are so potentially dire, why do this workshop at all?
 
-The modern web favors no-code methods of making websites, meaning that fewer people are learning to use HTML and use the tools built into their browser. However, the no-code, drag-and-drop interfaces still produce HTML. Even if you never see it, the internet still runs on HTML. My colleague Syd likes to say that every third-grader should be taught regular expressions. I don't 100% agree with that, but I *do* think that *everyone* should have at least a little bit of power to understand how websites work under the hood, and to control their web browsing experience. If you never modify a form again ever, I will still be happy knowing that *y'all* now know how to get that glimpse under the hood, for any web page, at any time, for any reason.
+The modern web favors no-code methods of making websites, meaning that fewer people are learning to use HTML and use the tools built into their browser. However, the no-code, drag-and-drop interfaces still produce HTML. Even if you never see it, the internet still runs on HTML.
+
+My stance is that *everyone* should have the chance to understand how websites work under the hood, and the full ability to control their web browsing experience. If you never modify a form again ever, I will still be happy. Because I know that *y'all* can get that glimpse under the hood, for any web page, at any time, for any reason.
 
 I'll leave it there. Thank you all so much for walking through this with me. Does anyone have any last questions or comments?
