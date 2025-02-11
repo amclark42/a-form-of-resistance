@@ -46,7 +46,7 @@ Now we just need to find the source of that "am I cool" nonsense. There's a fold
 
 Before we jump into practice, does anyone have any questions or comments about anything so far?
 
-All righty, I've set up a page with a couple of example forms in it, including this one. They'll all lead to this web page. It stores no data but *does* dutifully report back the data you've given it, so you can see how your changes have affected the request. You'll probably only have time for one right now, so pick one and play around!
+All righty, I've set up a page with a couple of example forms in it, including this one. They'll all lead to this web page. It stores no data but *does* dutifully report back the data you've given it, so you can see how your changes have affected the request. You may only have time for one right now, so pick the form that sounds the most interesting.
 
 Okay, have fun! I'll call us back in 5 to 8 minutes. Feel free to leave a message in chat or unmute if you need any help in the meantime.
 
