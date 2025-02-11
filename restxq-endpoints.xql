@@ -99,7 +99,7 @@ xquery version "3.1";
       tut:build-page('Resource not found', doc('404.html'))
     else
       let $formDoc := doc('forms/'||$filename)
-      return tut:build-page($formDoc//xhtml:title, $formDoc//xhtml:body/*)
+      return tut:build-page($formDoc//xhtml:title, $formDoc)
   };
   
   
@@ -153,10 +153,8 @@ xquery version "3.1";
           </h1>
           <div>
             <p>HTTP 
-              <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods" target="_blank">request
-                method</a>:
-              <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/{$method}" 
-                target="_blank">{ $method }</a>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods">request method</a>:
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/{$method}">{ $method }</a>
             </p>
             { $params }
           </div>
@@ -177,9 +175,10 @@ xquery version "3.1";
         <title>{ $title }</title>
         <style>{ unparsed-text('css/bootstrap-reboot.min.css') }</style>
         <style>{ unparsed-text('css/forms.css') }</style>
+        { $contents//xhtml:head/xhtml:style }
       </head>
       <body>
-        { $contents }
+        { $contents//xhtml:body/* }
       </body>
     </html>
   };
