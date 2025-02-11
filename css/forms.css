@@ -79,9 +79,12 @@ form, .form-group {
 }
 
 nav {
+  align-items: center;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 0.5em;
   padding: 0.5em;
+  
 }
 
 form {
