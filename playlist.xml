@@ -1,0 +1,42 @@
+<playlist xmlns="http://xspf.org/ns/0/" version="1">
+  <title>A Form of Resistance</title>
+  <annotation>Workshop about hacking web forms.</annotation>
+  <trackList>
+    <track>
+      <title>Coasting</title>
+      <creator>Darren Korb</creator>
+      <album>Transistor: Original Soundtrack</album>
+      <location>Music/Transistor Soundtrack/Darren Korb - Transistor- Original Soundtrack - 05 Coasting.mp3</location>
+    </track>
+    <track>
+      <title>I Got Soul [Animal Crossing]</title>
+      <creator>Mustin Enterprises</creator>
+      <album>Freebies for Streaming</album>
+      <location>Music/Mustin Enterprises - I Got Soul -Animal Crossing.mp3</location>
+    </track>
+    <track>
+      <title>Give It Away</title>
+      <creator>Zero 7</creator>
+      <album>Simple Things</album>
+      <location>Music/Zero 7 - Simple Things/04 - Give It Away.mp3</location>
+    </track>
+    <track>
+      <title>Chainsaw Funk</title>
+      <creator>2 Mello</creator>
+      <album>Sounds Of Tokyo-To Future</album>
+      <location>Music/2 Mello - Sounds Of Tokyo-To Future/2 Mello - Sounds Of Tokyo-To Future - 14 Chainsaw Funk.mp3</location>
+    </track>
+    <track>
+      <title>The Wilds</title>
+      <creator>SuperGiant Games</creator>
+      <album>Bastion OST</album>
+      <location>Music/Bastion OST/The Wilds.mp3</location>
+    </track>
+    <track>
+      <title>dum heavy</title>
+      <creator>2 Mello</creator>
+      <album>Sunsound Collisions</album>
+      <location>Music/2 Mello - Sunsound Collisions/2 Mello - Sunsound Collisions - 07 dum heavy.mp3</location>
+    </track>
+  </trackList>
+</playlist>
