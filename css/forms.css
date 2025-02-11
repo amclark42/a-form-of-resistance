@@ -73,6 +73,11 @@ form, .form-group {
   flex-direction: column;
 }
 
+.form-group.form-group-row {
+  flex-direction: row;
+  gap: 0.25em;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -82,6 +87,11 @@ nav {
 form {
   gap: 1rem;
   padding: 1em 1.25em;
+}
+
+.required-notice {
+  color: #a70000;
+  font-size: 0.75em;
 }
 
 input { font-size: inherit; }

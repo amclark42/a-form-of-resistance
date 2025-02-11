@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>The Illusion of Choice</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--  CSS  -->
+    <link rel="stylesheet" type="text/css" 
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600&amp;subset=latin,latin-ext" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/forms.css" />
+  </head>
+  <body>
+    <main>
+      <h1>The Illusion of Choice</h1>
+      
+        <form method="get" action="../request">
+          <fieldset>
+            <legend>Would you like to subscribe to my Everything™? <span class="required-notice">Required</span></legend>
+            <div class="flex big">
+              <input type="radio" id="subscribe-yes" name="subscribe-me" value="yes" checked="checked" required="required"/>
+              <label for="subscribe-yes"><strong>Yes!</strong></label>
+            </div>
+            <div class="flex minimal">
+              <input type="radio" id="subscribe-maybe" name="subscribe-me" value="later" required="required"/>
+              <label for="subscribe-maybe">Maybe later</label>
+            </div>
+          </fieldset>
+          <div class="form-group">
+            <input type="submit" value="Proceed"/>
+          </div>
+          <div>
+            <!-- This field is used to construct a link from the submission page back to the form. -->
+            <input type="hidden" name="form-name" value="04-illusion.html" />
+          </div>
+        </form>
+        <!-- CSS specific to this form -->
+        <style><![CDATA[
+          .flex {
+            display: flex;
+            gap: 0.35rem;
+          }
+          .flex input[type="radio"] { margin-left: 0; }
+          .big { font-size: 3em; }
+          .minimal {
+            color: #504f4f;
+            font-size: 0.75em;
+          }
+        ]]></style>
+      
+      <aside>
+        <details class="about">
+          <summary>About this form</summary>
+          <p>Sometimes you just want to say “No.”</p>
+        </details>
+        <nav>
+          <a href="../index.html">A Form of Resistance</a>
+        </nav>
+      </aside>
+    </main>
+  </body>
+</html>
